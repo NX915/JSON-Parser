@@ -33,6 +33,7 @@ function App() {
       )));
   };
 
+  //trigger inital data fetch
   useEffect(() => {
     getAllData();
   }, []);
