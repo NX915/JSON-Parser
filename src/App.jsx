@@ -7,6 +7,7 @@ import { Info } from './components/Info';
 function App() {
   const [state, setState] = useState({
     data: {},
+    loading: true,
   });
 
   // Use real data from API calls
@@ -19,7 +20,8 @@ function App() {
         return setState(prev => (
           {
             ...prev,
-            data: all,
+            data: all[0].data,
+            loading: false,
           }))
       })
   };
@@ -31,9 +33,11 @@ function App() {
   return (
     <main className='page-content'>
       <h1>Seamless MD JSON Parser</h1>
-      <Info
-        data={state.data}
-      />
+      {!state.loading &&
+        <Info
+          data={state.data}
+        />
+      }
     </main>
   );
 }
