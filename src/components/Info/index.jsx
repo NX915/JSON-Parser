@@ -7,8 +7,12 @@ import React, { useState } from 'react';
 export const Info = (props) => {
 
   return (
-    <div>
-      Info!!!
+    <div className='info'>
+      <p>Name of patient: </p>
+      <p>Organization name: </p>
+      <p>Gender: </p>
+      <p>Number of conditions they have: </p>
+      <p>List of all conditions: </p>
     </div>
   );
 };
