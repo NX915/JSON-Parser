@@ -10,7 +10,7 @@ function App() {
     loading: true,
   });
 
-  // Use real data from API calls
+  // Use data from server
   const getAllData = () => {
     Promise.all([
       axios.get('/api'),
@@ -28,7 +28,7 @@ function App() {
       .catch(e => setState(prev => (
         {
           ...prev,
-          error: e,
+          error: e.response,
         }
       )));
   };
@@ -46,7 +46,7 @@ function App() {
         />
       }
       {state.error &&
-        <p>Error {state.error.response.status}: {state.error.response.statusText}</p>
+        <p>Error {state.error.status}: {state.error.statusText}</p>
       }
     </main>
   );
