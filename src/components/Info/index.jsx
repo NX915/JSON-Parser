@@ -4,12 +4,13 @@ import { InfoItems } from './InfoItems';
 // import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 // const classnames = require('classnames');
+import './index.css';
 
 export const Info = (props) => {
   const data = props.data;
   const name = `${data.name[0].given} ${data.name[0].family}`;
   const org = data.managingOrganization.display;
-  const gender = data.gender;
+  const gender = `${data.gender[0].toUpperCase()}${data.gender.slice(1)}`;
   const conditions = data.conditions;
 
   return (

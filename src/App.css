@@ -2,3 +2,13 @@ body {
   color: white;
   background-color: gray;
 }
+
+main {
+  /* background-color: darkslategrey; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  max-width: 800px;
+}
