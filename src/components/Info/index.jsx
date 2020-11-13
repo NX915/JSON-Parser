@@ -8,10 +8,10 @@ import './index.css';
 
 export const Info = (props) => {
   const data = props.data;
-  const name = `${data.name[0].given} ${data.name[0].family}`;
-  const org = data.managingOrganization.display;
-  const gender = `${data.gender[0].toUpperCase()}${data.gender.slice(1)}`;
-  const conditions = data.conditions;
+  const name = data.name ? `${data.name[0].given} ${data.name[0].family}` : '';
+  const org = data.managingOrganization ? data.managingOrganization.display : '';
+  const gender = data.gender ? `${data.gender[0].toUpperCase()}${data.gender.slice(1)}` : '';
+  const conditions = data.conditions ? data.conditions : [];
 
   return (
     <div className='info'>

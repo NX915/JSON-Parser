@@ -22,8 +22,15 @@ function App() {
             ...prev,
             data: all[0].data,
             loading: false,
+            error: null,
           }))
       })
+      .catch(e => setState(prev => (
+        {
+          ...prev,
+          error: e,
+        }
+      )));
   };
 
   useEffect(() => {
@@ -37,6 +44,9 @@ function App() {
         <Info
           data={state.data}
         />
+      }
+      {state.error &&
+        <p>Error {state.error.response.status}: {state.error.response.statusText}</p>
       }
     </main>
   );
